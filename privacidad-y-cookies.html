@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad y Cookies · Adoradores</title>
+    <style>
+        :root {
+            --oro: #B68924;
+            --oro-oscuro: #8E6816;
+            --oro-claro: #DFC78A;
+            --fondo: #FCFBF7;
+            --tarjeta: #FFFFFF;
+            --texto: #2B2412;
+            --texto-suave: #5C4918;
+            --borde: #E5DEC9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.65;
+        }
+
+        .site-header {
+            background: var(--tarjeta);
+            border-bottom: 1px solid var(--borde);
+            padding: 1rem 1.25rem;
+        }
+
+        .header-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--oro-oscuro);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--oro) 0%, var(--oro-oscuro) 100%);
+            color: #FFFFFF;
+            border: 1px solid var(--oro-claro);
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1.25rem;
+        }
+
+        .legal-card {
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 6px 24px rgba(142, 104, 22, 0.06);
+        }
+
+        .legal-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .legal-nav a {
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            background: #FAF6EA;
+            border: 1px solid var(--oro-claro);
+            color: var(--oro-oscuro);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .legal-nav a:hover {
+            background: #F2E7C9;
+        }
+
+        h1 {
+            margin: 0 0 0.4rem;
+            font-size: 1.75rem;
+            color: var(--oro-oscuro);
+        }
+
+        .meta {
+            font-size: 0.88rem;
+            color: var(--texto-suave);
+            margin-bottom: 1.75rem;
+        }
+
+        h2 {
+            margin-top: 2.25rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid var(--oro-claro);
+            font-size: 1.3rem;
+            color: var(--oro-oscuro);
+        }
+
+        h3 {
+            margin-top: 1.35rem;
+            margin-bottom: 0.45rem;
+            font-size: 1.05rem;
+            color: var(--texto);
+        }
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.45rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid var(--borde);
+            padding: 0.65rem 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #FAF6EA;
+            color: var(--oro-oscuro);
+            font-weight: 700;
+        }
+
+        .aviso-rellenar {
+            background: #FDF8EA;
+            border-left: 4px solid var(--oro);
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            margin: 1.25rem 0;
+        }
+
+        footer {
+            max-width: 920px;
+            margin: 2rem auto 2.5rem;
+            padding: 0 1.25rem;
+            font-size: 0.88rem;
+            color: var(--texto-suave);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        footer a {
+            color: var(--oro-oscuro);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .legal-card {
+                padding: 1.25rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="./" class="brand">
+                <img src="Imagenes/logo-ermita.png" alt="Logo de la Ermita" style="height: 36px; width: auto;" onerror="this.style.display='none'">
+                <span>Adoradores</span>
+            </a>
+            <a href="./" class="btn-volver">Volver a Inicio</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="legal-card">
+            <h1>Política de Privacidad y Política de Cookies</h1>
+            <p class="meta">Última actualización: noviembre de 2026 · Marco normativo: España / Unión Europea</p>
+
+            <nav class="legal-nav" aria-label="Secciones legales">
+                <a href="#privacidad">1. Política de Privacidad</a>
+                <a href="#cookies">2. Política de Cookies</a>
+                <a href="#gestion-cookies">Cómo gestionar o desactivar cookies</a>
+            </nav>
+
+            <div class="aviso-rellenar">
+                <strong>Antes de publicar:</strong> Sustituye los datos entre corchetes (<code>[NOMBRE / ENTIDAD]</code>, <code>[NIF/CIF]</code>, <code>[DOMICILIO]</code>, <code>[CORREO DE CONTACTO]</code>) por los datos reales del titular o responsable del sitio web.
+            </div>
+
+            <!-- ==================== POLÍTICA DE PRIVACIDAD ==================== -->
+            <section id="privacidad">
+                <h2>1. Política de Privacidad</h2>
+                <p>
+                    En cumplimiento del <strong>Reglamento (UE) 2016/679 General de Protección de Datos (RGPD)</strong> y de la <strong>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)</strong>, se informa a las personas usuarias sobre el tratamiento de los datos personales recabados a través de este sitio web.
+                </p>
+
+                <h3>1.1. Responsable del tratamiento</h3>
+                <ul>
+                    <li><strong>Responsable:</strong> [NOMBRE COMPLETO DEL RESPONSABLE O ENTIDAD / PARROQUIA / ASOCIACIÓN]</li>
+                    <li><strong>NIF / CIF:</strong> [NIF O CIF]</li>
+                    <li><strong>Domicilio:</strong> [DIRECCIÓN POSTAL COMPLETA, LOCALIDAD Y PROVINCIA, ESPAÑA]</li>
+                    <li><strong>Correo electrónico de contacto:</strong> [CORREO@EJEMPLO.ES]</li>
+                    <li><strong>Sitio web:</strong> [URL DEL SITIO WEB, EJ. https://jmfc.es/ADORADORES/]</li>
+                </ul>
+
+                <h3>1.2. Finalidad del tratamiento y base jurídica</h3>
+                <p>Los datos personales que pudieran facilitarse (por ejemplo, a través de correo electrónico o canales de contacto indicados) se tratarán con las siguientes finalidades:</p>
+                <ul>
+                    <li><strong>Atención de consultas y coordinación de turnos/actividades:</strong> gestionar comunicaciones, solicitudes de información o participación en turnos de adoración. <em>Base jurídica:</em> consentimiento de la persona interesada (art. 6.1.a RGPD) o, en su caso, interés legítimo/misión organizativa vinculada a la actividad solicitada (art. 6.1.f RGPD).</li>
+                    <li><strong>Funcionamiento técnico y seguridad del sitio web:</strong> garantizar el correcto funcionamiento de la página, prevenir abusos y mantener la seguridad de los sistemas. <em>Base jurídica:</em> interés legítimo del responsable (art. 6.1.f RGPD).</li>
+                    <li><strong>Cumplimiento de obligaciones legales:</strong> atender requerimientos de autoridades o administraciones públicas cuando exista obligación legal. <em>Base jurídica:</em> cumplimiento de una obligación legal (art. 6.1.c RGPD).</li>
+                </ul>
+
+                <h3>1.3. Plazo de conservación</h3>
+                <p>
+                    Los datos personales se conservarán únicamente durante el tiempo necesario para cumplir con la finalidad para la que fueron recabados y para determinar las posibles responsabilidades que se pudieran derivar del tratamiento, de acuerdo con los plazos legales aplicables en España.
+                </p>
+
+                <h3>1.4. Destinatarios y encargados de tratamiento</h3>
+                <p>
+                    Con carácter general, no se cederán datos a terceros salvo obligación legal o cuando sea estrictamente necesario para la prestación del servicio (por ejemplo, proveedores de alojamiento web o servicios tecnológicos que actúan como encargados de tratamiento bajo contrato conforme al art. 28 RGPD).
+                </p>
+                <p>
+                    Cuando el sitio web consulta información pública (como horarios o cuadrantes publicados en hojas de cálculo o servicios externos), dicha consulta se realiza para mostrar la información de servicio al visitante. Si se emplean servicios de terceros ubicados fuera del Espacio Económico Europeo (EEE), se procurará que cuenten con garantías adecuadas conforme al capítulo V del RGPD (como decisiones de adecuación o cláusulas contractuales tipo).
+                </p>
+
+                <h3>1.5. Derechos de las personas usuarias</h3>
+                <p>
+                    Cualquier persona tiene derecho a obtener confirmación sobre si se están tratando datos personales que le conciernen. Asimismo, puede ejercer los siguientes derechos:
+                </p>
+                <ul>
+                    <li><strong>Acceso:</strong> conocer qué datos se tratan y con qué finalidad.</li>
+                    <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
+                    <li><strong>Supresión («derecho al olvido»):</strong> solicitar la eliminación de sus datos cuando ya no sean necesarios o se retire el consentimiento.</li>
+                    <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos en determinadas circunstancias.</li>
+                    <li><strong>Limitación del tratamiento:</strong> solicitar que se limite el uso de sus datos en los supuestos previstos por la ley.</li>
+                    <li><strong>Portabilidad:</strong> recibir los datos facilitados en un formato estructurado, de uso común y lectura mecánica, cuando proceda.</li>
+                    <li><strong>Retirada del consentimiento:</strong> retirar en cualquier momento el consentimiento otorgado, sin que ello afecte a la licitud del tratamiento previo.</li>
+                </ul>
+                <p>
+                    Para ejercer estos derechos, puedes enviar una solicitud a <strong>[CORREO@EJEMPLO.ES]</strong> indicando el derecho que deseas ejercer y aportando un medio de identificación suficiente si fuese necesario. Asimismo, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> a través de <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.
+                </p>
+            </section>
+
+            <!-- ==================== POLÍTICA DE COOKIES ==================== -->
+            <section id="cookies">
+                <h2>2. Política de Cookies</h2>
+                <p>
+                    De conformidad con el <strong>artículo 22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE)</strong>, el RGPD y la <em>Guía sobre el uso de las cookies</em> de la Agencia Española de Protección de Datos (AEPD), se informa sobre el uso de cookies y tecnologías similares de almacenamiento y recuperación de datos en equipos terminales.
+                </p>
+
+                <h3>2.1. ¿Qué es una cookie?</h3>
+                <p>
+                    Una cookie es un pequeño archivo o registro que se descarga y almacena en el navegador del dispositivo de la persona usuaria al acceder a determinadas páginas web, permitiendo, entre otras funciones, recordar preferencias, asegurar el funcionamiento técnico o analizar la navegación. También existen tecnologías similares como <code>localStorage</code> o <code>sessionStorage</code>.
+                </p>
+
+                <h3>2.2. Tipología de cookies según su finalidad</h3>
+                <ul>
+                    <li><strong>Cookies técnicas o necesarias:</strong> imprescindibles para el funcionamiento básico del sitio web, la navegación o el mantenimiento de configuraciones técnicas esenciales. Están exentas de consentimiento previo conforme a la normativa vigente cuando son estrictamente necesarias.</li>
+                    <li><strong>Cookies de preferencias o personalización:</strong> permiten recordar información para que la persona usuaria acceda al servicio con determinadas características (por ejemplo, idioma o preferencias de visualización).</li>
+                    <li><strong>Cookies de análisis o medición:</strong> permiten cuantificar el número de visitantes y realizar el análisis estadístico del uso que hacen las personas usuarias del servicio ofertado.</li>
+                    <li><strong>Cookies publicitarias o comportamentales:</strong> almacenan información del comportamiento obtenida a través de la observación continuada de hábitos de navegación para desarrollar un perfil específico y mostrar publicidad. <em>(Este sitio no persigue fines publicitarios).</em></li>
+                </ul>
+
+                <h3>2.3. Cookies y tecnologías utilizadas en este sitio</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre / Tipo</th>
+                            <th>Finalidad</th>
+                            <th>Duración</th>
+                            <th>Titularidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Técnicas / Almacenamiento esencial</td>
+                            <td>Garantizar la carga correcta de la página, seguridad y funcionamiento técnico del sitio.</td>
+                            <td>De sesión / Corta duración</td>
+                            <td>Propia / Proveedor de alojamiento</td>
+                        </tr>
+                        <tr>
+                            <td>Preferencias (si aplica)</td>
+                            <td>Recordar ajustes elegidos por la persona usuaria (por ejemplo, estado de consentimiento de cookies).</td>
+                            <td>Hasta [EJ. 6 o 12 meses]</td>
+                            <td>Propia</td>
+                        </tr>
+                        <tr>
+                            <td>Analíticas / Terceros (si se activan)</td>
+                            <td>[INDICAR SI SE USA ALGUNA HERRAMIENTA DE ANALÍTICA O DEJAR COMO "NO ACTIVADAS" SI NO SE INSTALAN COOKIES ANALÍTICAS]</td>
+                            <td>[SEGÚN PROVEEDOR]</td>
+                            <td>[PROPIA / TERCERO]</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2.4. Consentimiento</h3>
+                <p>
+                    El uso de cookies no necesarias (como las analíticas o de preferencias no estrictamente técnicas, si se emplean) requiere el <strong>consentimiento previo, libre, específico e informado</strong> de la persona usuaria. Cuando exista un banner o panel de configuración de cookies, podrás aceptar todas, rechazarlas o configurarlas de forma granular antes de su activación.
+                </p>
+
+                <h3 id="gestion-cookies">2.5. Cómo gestionar, bloquear o eliminar las cookies</h3>
+                <p>
+                    Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones del navegador que utilices:
+                </p>
+                <ul>
+                    <li><strong>Google Chrome:</strong> Configuración &gt; Privacidad y seguridad &gt; Cookies y otros datos de sitios.</li>
+                    <li><strong>Mozilla Firefox:</strong> Ajustes &gt; Privacidad y seguridad &gt; Cookies y datos del sitio.</li>
+                    <li><strong>Microsoft Edge:</strong> Configuración &gt; Cookies y permisos del sitio.</li>
+                    <li><strong>Safari (Apple):</strong> Ajustes / Preferencias &gt; Privacidad.</li>
+                </ul>
+                <p>
+                    Ten en cuenta que desactivar o bloquear ciertas cookies técnicas puede afectar al funcionamiento normal de algunas partes de la página web.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <span>© <span id="anio-actual">2026</span> Adoradores · Todos los derechos reservados</span>
+        <span><a href="./">Inicio</a></span>
+    </footer>
+
+    <script>
+        const elAnio = document.getElementById("anio-actual");
+        if (elAnio) {
+            elAnio.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
