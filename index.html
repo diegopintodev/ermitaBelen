@@ -568,21 +568,78 @@
     box-shadow: 0 5px 14px rgba(142, 104, 22, 0.3);
     filter: brightness(1.05);
 }
-    </style>
+.is-hidden {
+    display: none !important;
+}
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    height: 44px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    display: block;
+    mix-blend-mode: multiply;
+}
+ .brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.brand-ermita-logo {
+    height: 36px;
+    width: auto;
+    max-width: 64px;
+    object-fit: contain;
+    display: block;
+    /* Si la imagen tiene fondo blanco y está sobre fondo dorado/claro,
+       multiply ayuda a que el blanco no se vea como un bloque sólido */
+    mix-blend-mode: multiply;
+}
+
+.brand-text {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.brand-adoradores {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.brand-ermita {
+    color: #DFC78A;
+    font-weight: 500;
+}
+ </style>
 </head>
 <body>
 
     <header>
         
-            <div class="brand-title"><span>✝</span> Adoradores <span>Ermita Belen</span></div>
+            <div class="brand-lockup">
+    <img src="Imagenes/capilla-ador-logo.jpg"
+         alt="Logo Ermita Belén"
+         class="brand-ermita-logo">
+    <span class="brand-text">
+        <strong class="brand-adoradores">Adoradores</strong>
+        <span class="brand-ermita">Ermita Belén</span>
+    </span>
+</div>
      
 
         <nav aria-label="Navegación principal">
             <ul class="nav-links">
-                <li><a href="https://jmfc.es/">Inicio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#recursos">Recursos</a></li>
                 <li><a href="#turnos">Turnos y Horarios</a></li>
-                <li><a href="https://jmfc.es/comunicate-con-nosotros/">Contacto</a></li>
+                <li><a href="https://jmfc.es/comunicate-con-nosotros/" class="is-hidden">Contacto</a></li>
             </ul>
         </nav>
 
@@ -590,9 +647,9 @@
     </header>
 
     <main>
-        <div class="hero">
+        <div id="inicio" class="hero">
             <div class="hero-inner">
-                <div class="hero-content">
+                <div class="hero-content" >
                     <span class="badge">Adoración Eucarística</span>
                     <h1>ADORADORES</h1>
                     <p>Acompaña al Señor en el Santísimo Sacramento. Un espacio de paz, oración intercesora y renovación espiritual para toda nuestra comunidad.</p>
@@ -821,22 +878,25 @@
 
     </main>
 
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div>
-                    <strong>Adoradores</strong>
-                    <span><a href="https://jmfc.es/privacy-policy/" style="color: #94A3B8;">Política de privacidad</a> · <a href="https://jmfc.es/politica-de-cookies/" style="color: #94A3B8;">Política de cookies</a></span>
-                </div>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.facebook.com/juanmanuel.fernandezcaballero.1/" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.linkedin.com/in/juan-manuel-fernandez-caballero-5b25252b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://x.com/JmfcFormacion" target="_blank" rel="noopener noreferrer">X</a>
+   <footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="Imagenes/capilla-ador-logo.jpg"
+                 alt="Logo de la Ermita"
+                 class="footer-logo">
+            <div>
+                <strong>Adoradores</strong>
+                <span><a href="privacidad-y-cookies.html#privacidad">Política de privacidad</a>  <a href="privacidad-y-cookies.html#cookies">Política de cookies</a></span>
             </div>
         </div>
-    </footer>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/juanmanuel.fernandezcaballero.1/" target="_blank" rel="noopener noreferrer" class="is-hidden">Facebook</a>
+            <a href="https://www.linkedin.com/in/juan-manuel-fernandez-caballero-5b25252b" target="_blank" rel="noopener noreferrer" class="is-hidden">LinkedIn</a>
+            <a href="https://x.com/JmfcFormacion" target="_blank" rel="noopener noreferrer" class="is-hidden">X</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
