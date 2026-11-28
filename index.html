@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
+   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADORADORES</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +13,7 @@
     <meta property="og:title" content="ADORADORES - Adoración Perpetua en Fuenlabrada" />
     <meta property="og:description" content="Capilla de Adoración Perpetua en Fuenlabrada - Horarios, información y contacto." />
     <meta property="og:image" content="https://adoracionenfuenlabrada.es/Imagenes/capilla-ador-logo.jpg" />
+
     <style>
         :root {
             --bg-alabaster: #FAF9F6;
@@ -24,7 +25,6 @@
             --gold-hover: #A8821D;
             --gold-light: rgba(197, 155, 39, 0.14);
             --border-subtle: #E2E8F0;
-       
         }
 
         * {
@@ -66,7 +66,7 @@
             align-items: center;
             gap: 0.65rem;
             text-decoration: none;
-            color: /*var(--navy-deep)*/white;
+            color: white;
         }
 
         .brand-title {
@@ -125,7 +125,6 @@
             min-height: 78vh;
             background-color: #1B2438;
             background-image:
-               /*linear-gradient(90deg, rgba(15, 23, 42, 0.86) 0%, rgba(15, 23, 42, 0.58) 52%, rgba(15, 23, 42, 0.28) 100%),*/
                 url('./Imagenes/imagenPortada.jpg'),
                 url('file:///C:/Users/Diego%20Pinto/Documents/Proyectos/webCapilla/Imagenes/imagenPortada.jpg');
             background-position: center, center 22%, center 22%;
@@ -134,7 +133,6 @@
             display: flex;
             align-items: center;
             padding: 4rem 6%;
-            /*color: #FFFFFF;*/
         }
 
         .hero-inner {
@@ -177,10 +175,9 @@
             font-weight: 400;
         }
 
-        /* Franja de Botones y Recursos (estilo referencia) */
+        /* Franja de Botones y Recursos */
         .resources-bar {
-            /*background-color: var(--navy-deep);*/
-             background-color:rgb(142, 104, 22);
+            background-color: rgb(142, 104, 22);
             padding: 2.25rem 5%;
             border-bottom: 3px solid var(--gold-sacred);
         }
@@ -207,10 +204,17 @@
             color: #FFFFFF;
             border: 1px solid rgba(255, 255, 255, 0.28);
             padding: 0.7rem 1.35rem;
+            min-height: 44px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: manipulation;
             transition: all 0.25s ease;
         }
 
@@ -218,6 +222,13 @@
             border-color: var(--gold-sacred);
             background: rgba(197, 155, 39, 0.18);
             transform: translateY(-1px);
+        }
+
+        .btn-adviento-toggle[aria-expanded="true"] {
+            background: var(--bg-white);
+            color: rgb(142, 104, 22);
+            border-color: var(--bg-white);
+            font-weight: 600;
         }
 
         .btn-signup-main {
@@ -235,6 +246,160 @@
         .btn-signup-main:hover {
             background-color: var(--gold-hover);
             transform: translateY(-1px);
+        }
+
+        /* Sección desplegable Oraciones Adviento con acordeón */
+        .adviento-section {
+            padding: 2.5rem 5% 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 84px;
+        }
+
+        .adviento-panel {
+            background: var(--bg-white);
+            border: 1px solid #E5DEC9;
+            border-left: 4px solid var(--gold-sacred);
+            border-radius: 14px;
+            padding: 1.75rem;
+            box-shadow: 0 12px 28px rgba(22, 33, 62, 0.08);
+        }
+
+        .adviento-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .adviento-top h2 {
+            font-size: 2rem;
+            color: var(--navy-deep);
+            line-height: 1.15;
+            margin-bottom: 0.25rem;
+        }
+
+        .adviento-top p {
+            color: var(--navy-muted);
+            font-size: 0.95rem;
+        }
+
+        .adviento-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .adviento-action-btn {
+            min-height: 44px;
+            padding: 0.55rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #DFC78A;
+            background: #F8F1DF;
+            color: #8E6816;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            touch-action: manipulation;
+            transition: background-color 0.2s ease;
+        }
+
+        .adviento-action-btn:hover {
+            background: #EFE3C2;
+        }
+
+        .adviento-action-btn.is-secondary {
+            background: var(--bg-white);
+            border-color: var(--border-subtle);
+            color: var(--navy-muted);
+        }
+
+        .adviento-action-btn.is-secondary:hover {
+            background: var(--bg-alabaster);
+            color: var(--navy-deep);
+        }
+
+        .adviento-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .adviento-accordion-item {
+            background: var(--bg-alabaster);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .adviento-trigger {
+            width: 100%;
+            min-height: 52px;
+            padding: 0.85rem 1.15rem;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            text-align: left;
+            cursor: pointer;
+            touch-action: manipulation;
+            transition: background-color 0.2s ease;
+        }
+
+        .adviento-trigger:hover {
+            background: rgba(197, 155, 39, 0.08);
+        }
+
+        .adviento-trigger-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            line-height: 1.2;
+        }
+
+        .adviento-trigger-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: #F8F1DF;
+            border: 1px solid #DFC78A;
+            color: #8E6816;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .adviento-trigger[aria-expanded="true"] .adviento-trigger-icon {
+            background: var(--gold-sacred);
+            border-color: var(--gold-sacred);
+            color: #FFFFFF;
+            transform: rotate(45deg);
+        }
+
+        .adviento-body {
+            padding: 0 1.15rem 1.15rem;
+            border-top: 1px solid #ECE5D3;
+            padding-top: 0.9rem;
+        }
+
+        .adviento-body p {
+            color: var(--navy-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
         }
 
         /* Secciones */
@@ -313,147 +478,145 @@
         }
 
         /* Hoja de Google Sheets */
-     
-.sheet-status {
-    padding: 0.7rem 1.5rem;
-    background: #FCFBF7;
-    border-bottom: 1px solid #ECE5D3;
-    font-size: 0.85rem;
-    color: #5C4918;
-    font-weight: 500;
-}
+        .sheet-status {
+            padding: 0.7rem 1.5rem;
+            background: #FCFBF7;
+            border-bottom: 1px solid #ECE5D3;
+            font-size: 0.85rem;
+            color: #5C4918;
+            font-weight: 500;
+        }
 
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    background: #FFFFFF;
-}
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            background: #FFFFFF;
+        }
 
-.cuadrante-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 680px;
-    font-size: 0.9rem;
-}
+        .cuadrante-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            font-size: 0.9rem;
+        }
 
-.cuadrante-table thead th {
-    background: #F8F4EA;
-    color: #5C4918;
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.85rem 0.6rem;
-    border-bottom: 2px solid #DFC78A;
-    border-right: 1px solid #EFE9D8;
-    text-align: center;
-    white-space: nowrap;
-}
+        .cuadrante-table thead th {
+            background: #F8F4EA;
+            color: #5C4918;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.85rem 0.6rem;
+            border-bottom: 2px solid #DFC78A;
+            border-right: 1px solid #EFE9D8;
+            text-align: center;
+            white-space: nowrap;
+        }
 
-.cuadrante-table thead th:last-child {
-    border-right: none;
-}
+        .cuadrante-table thead th:last-child {
+            border-right: none;
+        }
 
-.cuadrante-table tbody tr {
-    border-bottom: 1px solid #EFECE3;
-    transition: background-color 0.15s ease;
-}
+        .cuadrante-table tbody tr {
+            border-bottom: 1px solid #EFECE3;
+            transition: background-color 0.15s ease;
+        }
 
-.cuadrante-table tbody tr:nth-child(even) {
-    background-color: #FCFBF8;
-}
+        .cuadrante-table tbody tr:nth-child(even) {
+            background-color: #FCFBF8;
+        }
 
-.cuadrante-table tbody tr:hover {
-    background-color: #FBF6E9;
-}
+        .cuadrante-table tbody tr:hover {
+            background-color: #FBF6E9;
+        }
 
-.cuadrante-table tbody td {
-    padding: 0.65rem 0.55rem;
-    border-right: 1px solid #F1ECE0;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-}
+        .cuadrante-table tbody td {
+            padding: 0.65rem 0.55rem;
+            border-right: 1px solid #F1ECE0;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
 
-.cuadrante-table tbody td:last-child {
-    border-right: none;
-}
+        .cuadrante-table tbody td:last-child {
+            border-right: none;
+        }
 
-.col-hora {
-    font-weight: 600;
-    color: #1E293B;
-    font-variant-numeric: tabular-nums;
-}
+        .col-hora {
+            font-weight: 600;
+            color: #1E293B;
+            font-variant-numeric: tabular-nums;
+        }
 
-.col-dia {
-    font-variant-numeric: tabular-nums;
-    font-weight: 500;
-}
+        .col-dia {
+            font-variant-numeric: tabular-nums;
+            font-weight: 500;
+        }
 
-.cell-ok {
-    background-color: #DCFCE7;
-    color: #166534;
-    font-weight: 600;
-}
+        .cell-ok {
+            background-color: #DCFCE7;
+            color: #166534;
+            font-weight: 600;
+        }
 
-.cell-low {
-    background-color: #FEF9C3;
-    color: #854D0E;
-    font-weight: 700;
-}
+        .cell-low {
+            background-color: #FEF9C3;
+            color: #854D0E;
+            font-weight: 700;
+        }
 
-.cell-zero {
-    background-color: #FEE2E2;
-    color: #991B1B;
-    font-weight: 700;
-}
+        .cell-zero {
+            background-color: #FEE2E2;
+            color: #991B1B;
+            font-weight: 700;
+        }
 
-.col-total {
-    font-weight: 700;
-    color: #8E6816;
-    background-color: #FAF7F0;
-    font-variant-numeric: tabular-nums;
-}
+        .col-total {
+            font-weight: 700;
+            color: #8E6816;
+            background-color: #FAF7F0;
+            font-variant-numeric: tabular-nums;
+        }
 
-.col-turno {
-    text-align: center;
-}
+        .col-turno {
+            text-align: center;
+        }
 
-.turno-badge {
-    display: inline-block;
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
+        .turno-badge {
+            display: inline-block;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
 
-.turno-madrugada {
-    background-color: #1E293B;
-    color: #F8FAFC;
-}
+        .turno-madrugada {
+            background-color: #1E293B;
+            color: #F8FAFC;
+        }
 
-.turno-manana {
-    background-color: #FEF3C7;
-    color: #8E6816;
-    border: 1px solid #DFC78A;
-}
+        .turno-manana {
+            background-color: #FEF3C7;
+            color: #8E6816;
+            border: 1px solid #DFC78A;
+        }
 
-.turno-tarde {
-    background-color: #DBEAFE;
-    color: #1E40AF;
-}
+        .turno-tarde {
+            background-color: #DBEAFE;
+            color: #1E40AF;
+        }
 
-.turno-noche {
-    background-color: #EDE9FE;
-    color: #5B21B6;
-}
+        .turno-noche {
+            background-color: #EDE9FE;
+            color: #5B21B6;
+        }
 
         /* Footer */
         footer {
-            /*background-color: var(--navy-dark);*/
-            background-color:rgb(142, 104, 22);
+            background-color: rgb(142, 104, 22);
             color: #CBD5E1;
             padding: 2.5rem 5%;
             border-top: 3px solid var(--gold-sacred);
@@ -511,132 +674,187 @@
             .hero-content {
                 text-align: center;
             }
+            .adviento-section {
+                padding: 1.75rem 1rem 0.5rem;
+            }
+            .adviento-panel {
+                padding: 1.15rem;
+            }
+            .adviento-top {
+                flex-direction: column;
+            }
+            .adviento-actions {
+                width: 100%;
+            }
+            .adviento-action-btn {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+            .adviento-trigger {
+                padding: 0.8rem 0.95rem;
+            }
+            .adviento-trigger-title {
+                font-size: 1.25rem;
+            }
         }
+
         .location-card {
-    background: #FCFBF7;
-    border: 1px solid #E5DEC9;
-    border-left: 4px solid #B68924;
-    border-radius: 16px;
-    padding: 1.4rem 1.6rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.25rem;
-    box-shadow: 0 10px 26px rgba(22, 33, 62, 0.06);
-}
+            background: #FCFBF7;
+            border: 1px solid #E5DEC9;
+            border-left: 4px solid #B68924;
+            border-radius: 16px;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 10px 26px rgba(22, 33, 62, 0.06);
+        }
 
-.location-tag {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #8E6816;
-    background: #F8F1DF;
-    border: 1px solid #DFC78A;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    margin-bottom: 0.5rem;
-}
+        .location-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #8E6816;
+            background: #F8F1DF;
+            border: 1px solid #DFC78A;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.5rem;
+        }
 
-.location-info h3 {
-    margin: 0.15rem 0 0.35rem;
-    color: #16213E;
-}
+        .location-info h3 {
+            margin: 0.15rem 0 0.35rem;
+            color: #16213E;
+        }
 
-.location-address,
-.location-note {
-    margin: 0.2rem 0;
-    font-size: 0.92rem;
-    color: #334155;
-}
-.btn-ubicacion {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.45rem 1rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #B68924 0%, #8E6816 100%);
-    color: #FFFFFF;
-    border: 1px solid #DFC78A;
-    font-weight: 600;
-    font-size: 0.88rem;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(142, 104, 22, 0.2);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-}
+        .location-address,
+        .location-note {
+            margin: 0.2rem 0;
+            font-size: 0.92rem;
+            color: #334155;
+        }
 
-.btn-ubicacion:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(142, 104, 22, 0.3);
-    filter: brightness(1.05);
-}
-.is-hidden {
-    display: none !important;
-}
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+        .btn-ubicacion {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #B68924 0%, #8E6816 100%);
+            color: #FFFFFF;
+            border: 1px solid #DFC78A;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(142, 104, 22, 0.2);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        }
 
-.footer-logo {
-    height: 44px;
-    width: auto;
-    max-width: 120px;
-    object-fit: contain;
-    display: block;
-    mix-blend-mode: multiply;
-}
- .brand-lockup {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-}
+        .btn-ubicacion:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 14px rgba(142, 104, 22, 0.3);
+            filter: brightness(1.05);
+        }
 
-.brand-ermita-logo {
-    height: 36px;
-    width: auto;
-    max-width: 64px;
-    object-fit: contain;
-    display: block;
-    /* Si la imagen tiene fondo blanco y está sobre fondo dorado/claro,
-       multiply ayuda a que el blanco no se vea como un bloque sólido */
-    mix-blend-mode: multiply;
-}
+        .mass-schedule {
+            margin-top: 1rem;
+            padding: 1.2rem 1.6rem;
+            background: #FCFBF7;
+            border: 1px solid #E5DEC9;
+            border-left: 4px solid #B68924;
+            border-radius: 16px;
+            box-shadow: 0 10px 26px rgba(22, 33, 62, 0.06);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
 
-.brand-text {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.4rem;
-}
+        .mass-schedule h3 {
+            margin-bottom: 0.65rem;
+            color: #16213E;
+        }
 
-.brand-adoradores {
-    color: #FFFFFF;
-    font-weight: 700;
-}
+        .mass-schedule ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem 1.5rem;
+            list-style: none;
+        }
 
-.brand-ermita {
-    color: #DFC78A;
-    font-weight: 500;
-}
- </style>
+        .mass-schedule li {
+            color: #334155;
+            font-size: 0.92rem;
+        }
+
+        .is-hidden {
+            display: none !important;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            height: 44px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+
+        .brand-lockup {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .brand-ermita-logo {
+            height: 36px;
+            width: auto;
+            max-width: 64px;
+            object-fit: contain;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+
+        .brand-text {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .brand-adoradores {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .brand-ermita {
+            color: #DFC78A;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        
-            <div class="brand-lockup">
-    <img src="Imagenes/capilla-ador-logo.jpg"
-         alt="Logo Ermita Belén"
-         class="brand-ermita-logo">
-    <span class="brand-text">
-        <strong class="brand-adoradores">Adoradores</strong>
-        <span class="brand-ermita">Ermita Belén</span>
-    </span>
-</div>
-     
+        <div class="brand-lockup">
+            <img src="Imagenes/capilla-ador-logo.jpg"
+                 alt="Logo Ermita Belén"
+                 class="brand-ermita-logo">
+            <span class="brand-text">
+                <strong class="brand-adoradores">Adoradores</strong>
+                <span class="brand-ermita">Ermita Belén</span>
+            </span>
+        </div>
 
         <nav aria-label="Navegación principal">
             <ul class="nav-links">
@@ -653,7 +871,7 @@
     <main>
         <div id="inicio" class="hero">
             <div class="hero-inner">
-                <div class="hero-content" >
+                <div class="hero-content">
                     <span class="badge">Adoración Eucarística</span>
                     <h1>ADORADORES</h1>
                     <p>Acompaña al Señor en el Santísimo Sacramento. Un espacio de paz, oración intercesora y renovación espiritual para toda nuestra comunidad.</p>
@@ -668,8 +886,139 @@
                     <a href="https://drive.google.com/file/d/1Y57uf13U56oH-p5wH3btzEmEYAeQFNW7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-resource">PAUTAS</a>
                     <a href="https://drive.google.com/file/d/14MCBoFLby2-swDvVMiOWbpJs8Um0TxsT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-resource">ORACIONES</a>
                     <a href="https://drive.google.com/open?id=1iyLkSiavfMjbAFyk0_nPUyqYrkBlKkTP&amp;usp=drive_fs" target="_blank" rel="noopener noreferrer" class="btn-resource">TIPOS DE ADORADOR</a>
+                    <button id="btn-oraciones-adviento" type="button" class="btn-resource btn-adviento-toggle" aria-expanded="false" aria-controls="seccion-oraciones-adviento">
+                        Oraciones Adviento
+                    </button>
                 </div>
                 <a href="https://forms.gle/Kvi48CsY1v513R7Q9" target="_blank" rel="noopener noreferrer" class="btn-signup-main">APÚNTATE AQUÍ</a>
+            </div>
+        </div>
+
+        <div id="seccion-oraciones-adviento" class="adviento-section" hidden>
+            <div class="adviento-panel" role="region" aria-label="Oraciones de Adviento">
+                <div class="adviento-top">
+                    <div>
+                        <h2>Oraciones de Adviento</h2>
+                        <p>Toca cada oración para desplegarla o usa los botones para abrirlas todas.</p>
+                    </div>
+                    <div class="adviento-actions">
+                        <button id="btn-desplegar-todas" type="button" class="adviento-action-btn">
+                            Desplegar todas
+                        </button>
+                        <button id="btn-cerrar-adviento" type="button" class="adviento-action-btn is-secondary">
+                            Ocultar sección
+                        </button>
+                    </div>
+                </div>
+
+                <div class="adviento-list">
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="true" aria-controls="oracion-1">
+                            <span class="adviento-trigger-title">1. Adviento Tiempo de Esperanza</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-1" class="adviento-body">
+                           <p>
+                           Adviento,tiempo de esperanza,en el seno de María crece el fermento de un mundo nuevo, el hijo del Dios vivo que llega a compartir con nosotros.<br>
+Nace Emanuel,Dios-con-nosotros, hecho niño, pobre, pequeño y necesitado.<br>
+María nos enseña el camino para hacer nacer a Jesús en nuestro tiempo: <br>
+confianza, entrega, fidelidad, coraje, y mucha fe en el Dios de la Vida. <br>
+Tiempo de espera, de atención y cuidados, de respeto y contemplación. <br> Señor, hay mucho dolor en nuestro tiempo, hay sufrimiento e injusticia, ayúdanos a sembrar semillas de esperanza. <br>Descúbrenos la alegría de la paciente espera, activa y fecunda, comprometida por la vida de los que nos rodean. <br>
+Enséñanos a hacer crecer la esperanza de algo nuevo, anímanos a entregar nuestras vidas para la construcción del Reino. <br>Es tiempo de espera, Señor, pero también es tiempo de donación y compromiso efectivo. <br>
+Contagianos la fe sencilla de María, que dio su vida para alumbrar el Reino
+y hacer nacer la esperanza en medio de su pueblo. 
+
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-2">
+                            <span class="adviento-trigger-title">2. Ante el Santísimo en Adviento</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-2" class="adviento-body" hidden>
+                            <p>
+                                Jesús Eucaristía, luz que viene al mundo, acompáñanos en este camino hacia la Navidad.
+                                Enséñanos a vivir en silencio, escucha nuestra oración por las familias, los enfermos y la
+                                Iglesia, y renueva nuestro deseo de estar contigo. Amén.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-3">
+                            <span class="adviento-trigger-title">3. Preparar el camino al Señor</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-3" class="adviento-body" hidden>
+                            <p>
+                                Padre bueno, en este Adviento aviva nuestra esperanza y ayúdanos a preparar el camino del
+                                Señor con obras de paz, perdón y caridad fraterna en nuestra comunidad. Amén.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-4">
+                            <span class="adviento-trigger-title">4. Salmo de San Francisco de Asís para el tiempo 
+del Adviento del Señor 
+</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-4" class="adviento-body" hidden>
+                            <p>
+                                ¿Hasta cuándo, Señor,me olvidarás por siempre? <br>¿Hasta cuándo apartarás tu rostro de mí? <br>¿Hasta cuándo tendré congojas en mi alma,dolor en mi corazón cada día? <br>¿Hasta cuándo triunfará mi enemigo sobre mí? <br>Mira y escúchame, Señor, Dios mío. <br>Ilumina mis ojos para que nunca me duerma en la muerte, <br>para que nunca diga mi enemigo: He prevalecido contra él. <br>Los que me atribulan se alegrarían si yo cayera; <br>pero yo he esperado en tu misericordia. <br> Mi corazón exultará en tu salvación; cantaré al Señor que me colmó de bienes, y salmodiaré al nombre del Señor altísimo. 
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-5">
+                            <span class="adviento-trigger-title">5. Con María en la espera</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-5" class="adviento-body" hidden>
+                            <p>
+                                Santa María, Virgen de la espera, enséñanos a acoger la Palabra con humildad y prontitud.
+                                Acompaña nuestra vigilancia en este Adviento para que Jesús nazca y crezca en cada hogar. Amén.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-6">
+                            <span class="adviento-trigger-title">6.Oración de la mañana</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-6" class="adviento-body" hidden>
+                            <p>
+                               De luz nueva se viste la tierra, porque el sol que del cielo ha venido en el seno feliz de la Virgen
+                               de su carne se ha revestido.<br>El amor hizo nuevas las cosas, el Espíritu ha descendido y la sombra del que es poderoso
+                               en la Virgen su luz ha encendido. <br>Ya la tierra reclama su fruto y de bodas se anuncia la alegría, el Señor que en los cielos moraba
+                               se hizo carne en la Virgen María.Gloria a Dios,el Señor poderoso, a su Hijo y Espíritu Santo, que en su gracia y su amor nos bendijo
+                               y a su reino nos ha destinado. Amén.
+                            </p>
+                        </div>
+                    </article>
+                     <article class="adviento-accordion-item">
+                        <button type="button" class="adviento-trigger" aria-expanded="false" aria-controls="oracion-7">
+                            <span class="adviento-trigger-title">7.Oración de la tarde</span>
+                            <span class="adviento-trigger-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="oracion-7" class="adviento-body" hidden>
+                            <p>
+                               Mirad las estrellas fulgentes brillar, sus luces anuncian que Dios ahí está, la noche en silencio, la noche en su paz,
+                               murmura esperanzas cumpliéndose ya.<br> Los ángeles santos, que vienen y van, preparan caminos por donde vendrá el Hijo del Padre, el Verbo eternal,
+                               al mundo del hombre en carne mortal.Abrid vuestras puertas, ciudades de paz, que el rey de la gloria ya pronto vendrá; .<br> abrid corazones, hermanos, cantad
+                               que vuestra esperanza cumplida será.Los justos sabían que el hambre de Dios vendría a colmarla el Dios del Amor, su Vida en su vida, su Amor en su amor
+                               serían un día su gracia y su don.Ven pronto, Mesías, ven pronto, Señor, los hombres hermanos esperan tu voz,
+                               tu luz, tu mirada, tu vida, tu amor.<br> Ven pronto, Mesías, sé Dios Salvador. Amén.
+
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
 
@@ -698,209 +1047,288 @@
                 </div>
             </div>
         </section>
-<section id="ubicacion" style="padding-top: 1.5rem;">
-    <div class="section-header">
-        <h2>Ubicación y Acceso</h2>
-        <div class="divider"></div>
-        <p>Encuentra fácilmente cómo llegar a la capilla.</p>
-    </div>
 
-    <div class="location-card">
-        <div class="location-info">
-            <span class="location-tag">📍 Localización</span>
-            <h3>Capilla de Adoración</h3>
-            <p class="location-address"><strong>Dirección:</strong> Glorieta de la Ermita de Belén, 2; 28941 Fuenlabrada (Madrid)</p>
-            <p class="location-note">Pulsa el botón para abrir la ruta directamente en Google Maps desde tu móvil o navegador.</p>
-        </div>
-        <div class="location-actions">
-            <a href="https://maps.app.goo.gl/MWeECSVr4RXnSG1o9"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn-ubicacion">
-    Abrir en Google Maps
-</a>
-            </a>
-        </div>
-    </div>
-</section>
-      
-<section id="turnos" style="padding-top: 1rem;">
-    <div class="section-header">
-        <h2>Cuadrante y Turnos de Adoración</h2>
-        <div class="divider"></div>
-        <p>Revisa los turnos disponibles y la organización actualizada de la capilla.</p>
-    </div>
-
-    <div class="sheet-card">
-        <div class="sheet-toolbar">
-            <div class="sheet-badge">
-                <strong>Cuadrante por Hora y Día · RESUMEN</strong>
+        <section id="ubicacion" style="padding-top: 1.5rem;">
+            <div class="section-header">
+                <h2>Ubicación y Acceso</h2>
+                <div class="divider"></div>
+                <p>Encuentra fácilmente cómo llegar a la capilla.</p>
             </div>
-            <div class="sheet-legend">
-                <span class="legend-item"><i class="dot dot-green"></i> Cubierto</span>
-                <span class="legend-item"><i class="dot dot-yellow"></i> Turno justo</span>
-                <span class="legend-item"><i class="dot dot-red"></i> Sin cubrir (0)</span>
+
+            <div class="location-card">
+                <div class="location-info">
+                    <span class="location-tag">📍 Localización</span>
+                    <h3>Capilla de Adoración</h3>
+                    <p class="location-address"><strong>Dirección:</strong> Glorieta de la Ermita de Belén, 2; 28941 Fuenlabrada (Madrid)</p>
+                    <p class="location-note">Pulsa el botón para abrir la ruta directamente en Google Maps desde tu móvil o navegador.</p>
+                </div>
+                <div class="location-actions">
+                    <a href="https://maps.app.goo.gl/MWeECSVr4RXnSG1o9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-ubicacion">
+                        Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div id="sheet-estado" class="sheet-status">Consultando Google Visualization (gviz/tq)...</div>
+            <div class="mass-schedule">
+                <div>
+                    <h3>Horario misas</h3>
+                    <ul>
+                        <li><strong>Domingos y preceptos:</strong> 11:00</li>
+                        <li><strong>Jueves:</strong> 19:00</li>
+                    </ul>
+                </div>
+                <a href="https://www.diocesisgetafe.es/parroquias/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-ubicacion">
+                    Misas otras Parroquias
+                </a>
+            </div>
+        </section>
 
-        <div class="table-responsive">
-            <table class="cuadrante-table">
-                <thead>
-                    <tr>
-                        <th>HORA</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>M</th>
-                        <th>X</th>
-                        <th>J</th>
-                        <th>V</th>
-                        <th>S</th>
-                        <th>X HORA</th>
-                        <th>TURNO</th>
-                    </tr>
-                </thead>
-                <tbody id="cuadrante-body"></tbody>
-            </table>
-        </div>
-    </div>
-</section>
+        <section id="turnos" style="padding-top: 1rem;">
+            <div class="section-header">
+                <h2>Cuadrante y Turnos de Adoración</h2>
+                <div class="divider"></div>
+                <p>Revisa los turnos disponibles y la organización actualizada de la capilla.</p>
+            </div>
 
-<script>
-(function () {
-    const SHEET_ID = "1e0ueXRsyl6eGOtngESosBYe-MXUaW1iXHgKT-3u5xGA";
-    const GID = "1352179539";
-    const SHEET_NAME = "RESUMEN";
+            <div class="sheet-card">
+                <div class="sheet-toolbar">
+                    <div class="sheet-badge">
+                        <strong>Cuadrante por Hora y Día · RESUMEN</strong>
+                    </div>
+                    <div class="sheet-legend">
+                        <span class="legend-item"><i class="dot dot-green"></i> Cubierto</span>
+                        <span class="legend-item"><i class="dot dot-yellow"></i> Turno justo</span>
+                        <span class="legend-item"><i class="dot dot-red"></i> Sin cubrir (0)</span>
+                    </div>
+                </div>
 
-    const tbody = document.getElementById("cuadrante-body");
-    const statusEl = document.getElementById("sheet-estado");
+                <div id="sheet-estado" class="sheet-status">Consultando Google Visualization (gviz/tq)...</div>
 
-    function getCountClass(val) {
-        const clean = String(val ?? "").trim();
-        if (clean === "" || clean === "-") return "";
-        const num = Number(clean.replace(",", "."));
-        if (Number.isNaN(num)) return "";
-        if (num === 0) return "cell-zero";
-        if (num === 1) return "cell-low";
-        return "cell-ok";
-    }
+                <div class="table-responsive">
+                    <table class="cuadrante-table">
+                        <thead>
+                            <tr>
+                                <th>HORA</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>M</th>
+                                <th>X</th>
+                                <th>J</th>
+                                <th>V</th>
+                                <th>S</th>
+                                <th>X HORA</th>
+                                <th>TURNO</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuadrante-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-    function getTurnoBadge(turno) {
-        const clean = String(turno ?? "").trim().toUpperCase();
-        if (!clean) return "";
-        let cls = "turno-badge";
-        if (clean.includes("MADRUGADA")) cls += " turno-madrugada";
-        else if (clean.includes("MAÑANA")) cls += " turno-manana";
-        else if (clean.includes("TARDE")) cls += " turno-tarde";
-        else if (clean.includes("NOCHE")) cls += " turno-noche";
-        return `<span class="${cls}">${clean}</span>`;
-    }
+        <script>
+        (function () {
+            const btnAdviento = document.getElementById("btn-oraciones-adviento");
+            const seccionAdviento = document.getElementById("seccion-oraciones-adviento");
+            const btnCerrarAdviento = document.getElementById("btn-cerrar-adviento");
+            const btnDesplegarTodas = document.getElementById("btn-desplegar-todas");
+            const triggers = Array.from(document.querySelectorAll(".adviento-trigger"));
 
-    function cellToString(cell) {
-        if (!cell) return "";
-        if (cell.f !== undefined && cell.f !== null && String(cell.f).trim() !== "") {
-            return String(cell.f).trim();
-        }
-        if (cell.v === undefined || cell.v === null) return "";
-        return String(cell.v).trim();
-    }
-
-    function renderTable(scheduleRows) {
-        tbody.innerHTML = "";
-        scheduleRows.forEach((cols) => {
-            const tr = document.createElement("tr");
-            for (let i = 0; i < 10; i++) {
-                const td = document.createElement("td");
-                const val = cols[i] ?? "";
-
-                if (i === 0) {
-                    td.className = "col-hora";
-                    td.textContent = val;
-                } else if (i >= 1 && i <= 7) {
-                    const cls = getCountClass(val);
-                    td.className = `col-dia ${cls}`.trim();
-                    td.textContent = val;
-                } else if (i === 8) {
-                    td.className = "col-total";
-                    td.textContent = val;
-                } else if (i === 9) {
-                    td.className = "col-turno";
-                    td.innerHTML = getTurnoBadge(val);
+            function setOracionEstado(trigger, abrir) {
+                const panelId = trigger.getAttribute("aria-controls");
+                const panel = panelId ? document.getElementById(panelId) : null;
+                trigger.setAttribute("aria-expanded", String(abrir));
+                if (panel) {
+                    panel.hidden = !abrir;
                 }
-                tr.appendChild(td);
             }
-            tbody.appendChild(tr);
-        });
-    }
 
-    window.__gvizCuadranteCallback = function (resp) {
-        if (!resp || resp.status === "error") {
-            const msg = resp && resp.errors && resp.errors[0]
-                ? resp.errors[0].detailed_message || resp.errors[0].message
-                : "Error en la respuesta de Google Visualization.";
-            statusEl.textContent = "gviz/tq: " + msg;
-            return;
-        }
-
-        const rawRows = (resp.table && resp.table.rows) || [];
-        const timeRegex = /\b\d{1,2}:\d{2}(?:\s*[-–—a]\s*\d{1,2}:\d{2})?\b/;
-        const extracted = [];
-
-        for (const r of rawRows) {
-            const c = r.c || [];
-            const vals = c.map(cellToString);
-            const horaIdx = vals.findIndex((v) => timeRegex.test(v));
-            if (horaIdx !== -1) {
-                extracted.push(vals.slice(horaIdx, horaIdx + 10));
+            function actualizarTextoDesplegarTodas() {
+                if (!btnDesplegarTodas) return;
+                const todasAbiertas = triggers.length > 0 && triggers.every((t) => t.getAttribute("aria-expanded") === "true");
+                btnDesplegarTodas.textContent = todasAbiertas ? "Plegar todas" : "Desplegar todas";
             }
-        }
 
-        if (!extracted.length) {
-            statusEl.textContent = "Se conectó con gviz/tq, pero no se encontraron filas horarias.";
-            return;
-        }
+            function abrirAdviento() {
+                if (!seccionAdviento || !btnAdviento) return;
+                seccionAdviento.hidden = false;
+                btnAdviento.setAttribute("aria-expanded", "true");
+                seccionAdviento.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
 
-        renderTable(extracted);
-        statusEl.textContent = `Sincronizado con gviz/tq: ${extracted.length} franjas horarias cargadas.`;
-    };
+            function cerrarAdviento() {
+                if (!seccionAdviento || !btnAdviento) return;
+                seccionAdviento.hidden = true;
+                btnAdviento.setAttribute("aria-expanded", "false");
+                btnAdviento.focus();
+            }
 
-    const params = new URLSearchParams({
-        tqx: "responseHandler:__gvizCuadranteCallback",
-        gid: GID,
-        sheet: SHEET_NAME
-    });
+            btnAdviento?.addEventListener("click", () => {
+                if (seccionAdviento.hidden) {
+                    abrirAdviento();
+                } else {
+                    cerrarAdviento();
+                }
+            });
 
-    const scriptEl = document.createElement("script");
-    scriptEl.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?${params.toString()}`;
-    scriptEl.onerror = function () {
-        statusEl.textContent = "No se pudo cargar gviz/tq. Comprueba que la hoja esté compartida para lectura pública ('Cualquier persona con el enlace').";
-    };
-    document.body.appendChild(scriptEl);
-})();
-</script>
+            btnCerrarAdviento?.addEventListener("click", cerrarAdviento);
+
+            triggers.forEach((trigger) => {
+                trigger.addEventListener("click", () => {
+                    const estaAbierta = trigger.getAttribute("aria-expanded") === "true";
+                    setOracionEstado(trigger, !estaAbierta);
+                    actualizarTextoDesplegarTodas();
+                });
+            });
+
+            btnDesplegarTodas?.addEventListener("click", () => {
+                const todasAbiertas = triggers.every((t) => t.getAttribute("aria-expanded") === "true");
+                triggers.forEach((t) => setOracionEstado(t, !todasAbiertas));
+                actualizarTextoDesplegarTodas();
+            });
+
+            actualizarTextoDesplegarTodas();
+        })();
+
+        (function () {
+            const SHEET_ID = "1e0ueXRsyl6eGOtngESosBYe-MXUaW1iXHgKT-3u5xGA";
+            const GID = "1352179539";
+            const SHEET_NAME = "RESUMEN";
+
+            const tbody = document.getElementById("cuadrante-body");
+            const statusEl = document.getElementById("sheet-estado");
+
+            function getCountClass(val) {
+                const clean = String(val ?? "").trim();
+                if (clean === "" || clean === "-") return "";
+                const num = Number(clean.replace(",", "."));
+                if (Number.isNaN(num)) return "";
+                if (num === 0) return "cell-zero";
+                if (num === 1) return "cell-low";
+                return "cell-ok";
+            }
+
+            function getTurnoBadge(turno) {
+                const clean = String(turno ?? "").trim().toUpperCase();
+                if (!clean) return "";
+                let cls = "turno-badge";
+                if (clean.includes("MADRUGADA")) cls += " turno-madrugada";
+                else if (clean.includes("MAÑANA")) cls += " turno-manana";
+                else if (clean.includes("TARDE")) cls += " turno-tarde";
+                else if (clean.includes("NOCHE")) cls += " turno-noche";
+                return `<span class="${cls}">${clean}</span>`;
+            }
+
+            function cellToString(cell) {
+                if (!cell) return "";
+                if (cell.f !== undefined && cell.f !== null && String(cell.f).trim() !== "") {
+                    return String(cell.f).trim();
+                }
+                if (cell.v === undefined || cell.v === null) return "";
+                return String(cell.v).trim();
+            }
+
+            function renderTable(scheduleRows) {
+                tbody.innerHTML = "";
+                scheduleRows.forEach((cols) => {
+                    const tr = document.createElement("tr");
+                    for (let i = 0; i < 10; i++) {
+                        const td = document.createElement("td");
+                        const val = cols[i] ?? "";
+
+                        if (i === 0) {
+                            td.className = "col-hora";
+                            td.textContent = val;
+                        } else if (i >= 1 && i <= 7) {
+                            const cls = getCountClass(val);
+                            td.className = `col-dia ${cls}`.trim();
+                            td.textContent = val;
+                        } else if (i === 8) {
+                            td.className = "col-total";
+                            td.textContent = val;
+                        } else if (i === 9) {
+                            td.className = "col-turno";
+                            td.innerHTML = getTurnoBadge(val);
+                        }
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                });
+            }
+
+            window.__gvizCuadranteCallback = function (resp) {
+                if (!resp || resp.status === "error") {
+                    const msg = resp && resp.errors && resp.errors[0]
+                        ? resp.errors[0].detailed_message || resp.errors[0].message
+                        : "Error en la respuesta de Google Visualization.";
+                    statusEl.textContent = "gviz/tq: " + msg;
+                    return;
+                }
+
+                const rawRows = (resp.table && resp.table.rows) || [];
+                const timeRegex = /\b\d{1,2}:\d{2}(?:\s*[-–—a]\s*\d{1,2}:\d{2})?\b/;
+                const extracted = [];
+
+                for (const r of rawRows) {
+                    const c = r.c || [];
+                    const vals = c.map(cellToString);
+                    const horaIdx = vals.findIndex((v) => timeRegex.test(v));
+                    if (horaIdx !== -1) {
+                        extracted.push(vals.slice(horaIdx, horaIdx + 10));
+                    }
+                }
+
+                if (!extracted.length) {
+                    statusEl.textContent = "Se conectó con gviz/tq, pero no se encontraron filas horarias.";
+                    return;
+                }
+
+                renderTable(extracted);
+                statusEl.textContent = `Sincronizado con gviz/tq: ${extracted.length} franjas horarias cargadas.`;
+            };
+
+            const params = new URLSearchParams({
+                tqx: "responseHandler:__gvizCuadranteCallback",
+                gid: GID,
+                sheet: SHEET_NAME
+            });
+
+            const scriptEl = document.createElement("script");
+            scriptEl.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?${params.toString()}`;
+            scriptEl.onerror = function () {
+                statusEl.textContent = "No se pudo cargar gviz/tq. Comprueba que la hoja esté compartida para lectura pública ('Cualquier persona con el enlace').";
+            };
+            document.body.appendChild(scriptEl);
+        })();
+        </script>
 
     </main>
 
-   <footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <img src="Imagenes/capilla-ador-logo.jpg"
-                 alt="Logo de la Ermita"
-                 class="footer-logo">
-            <div>
-                <strong>Adoradores</strong>
-                <span><a href="privacidad-y-cookies.html#privacidad">Política de privacidad</a>  <a href="privacidad-y-cookies.html#cookies">Política de cookies</a></span>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="Imagenes/capilla-ador-logo.jpg"
+                     alt="Logo de la Ermita"
+                     class="footer-logo">
+                <div>
+                    <strong>Adoradores</strong>
+                    <span><a href="privacidad-y-cookies.html#privacidad">Política de privacidad</a>  <a href="privacidad-y-cookies.html#cookies">Política de cookies</a></span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/juanmanuel.fernandezcaballero.1/" target="_blank" rel="noopener noreferrer" class="is-hidden">Facebook</a>
+                <a href="https://www.linkedin.com/in/juan-manuel-fernandez-caballero-5b25252b" target="_blank" rel="noopener noreferrer" class="is-hidden">LinkedIn</a>
+                <a href="https://x.com/JmfcFormacion" target="_blank" rel="noopener noreferrer" class="is-hidden">X</a>
             </div>
         </div>
-
-        <div class="social-links">
-            <a href="https://www.facebook.com/juanmanuel.fernandezcaballero.1/" target="_blank" rel="noopener noreferrer" class="is-hidden">Facebook</a>
-            <a href="https://www.linkedin.com/in/juan-manuel-fernandez-caballero-5b25252b" target="_blank" rel="noopener noreferrer" class="is-hidden">LinkedIn</a>
-            <a href="https://x.com/JmfcFormacion" target="_blank" rel="noopener noreferrer" class="is-hidden">X</a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
